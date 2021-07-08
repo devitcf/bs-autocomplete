@@ -1,9 +1,10 @@
 Vue.component('bs-autocomplete', {
+		inheritAttrs: false,
 		delimiters: ['{{', '}}'],
 		name: 'bs-autocomplete',
 		template: `
             <div style="position: relative" ref="outer_div">
-                <select value="value" :id="id" @click.stop.prevent="toggle_list" class="custom-select" :required="$attrs.required" @keydown.38="press_up" @keydown.40="press_down" @keypress.enter.stop.prevent="press_enter">
+                <select value="value" :id="id" class="custom-select"  @click.stop.prevent="toggle_list" v-bind="$attrs" @keydown.38="press_up" @keydown.40="press_down" @keypress.enter.stop.prevent="press_enter">
                 	<option style="display:none" v-if="selected_item" selected>
                 		<slot name="display_text" v-bind="{item:selected_item}">{{ get_item_text(selected_item) }}</slot>
                 	</option>
@@ -35,7 +36,7 @@ Vue.component('bs-autocomplete', {
 						return;
 					}
 					return this.toggle_list('hide')}
-				};
+			};
 		},
 		watch: {
 			show: async function (new_value) {
