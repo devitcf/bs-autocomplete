@@ -173,13 +173,14 @@ Vue.component('bs-autocomplete', {
 				}
 			},
 			select(item) {
-				if (item.disable === false) {
-					this.selected_item = item;
-					this.active_index = this.items.indexOf(item);
-					this.toggle_list('hide');
-					let return_value = this.return_obj ? item : item[this.return_attr];
-					this.$emit('input', return_value);
+				if (item.disable) {
+					return ;
 				}
+				this.selected_item = item;
+				this.active_index = this.items.indexOf(item);
+				this.toggle_list('hide');
+				let return_value = this.return_obj ? item : item[this.return_attr];
+				this.$emit('input', return_value);
 			},
 		},
 	}
