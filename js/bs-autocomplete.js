@@ -10,7 +10,7 @@ Vue.component('bs-autocomplete', {
 				</select>
 	            <div class="bs-autocomplete" v-if="show">
 	            	<div class="bs-autocomplete-items">
-	            		<div class="p-2" v-if="search_attrs.length > 0">
+	            		<div class="p-2">
 	            			<input type="text" class="form-control" v-model="search_value" ref="search_input" :placeholder="placeholder" @keydown.38="press_up" @keydown.40="press_down" @keypress.enter.stop.prevent="press_enter" @input="active_index = null">
 						</div>
 			            <div class="list-group list-group-flush bs-autocomplete-list" :style="{'--bs-autocomplete-max-height': get_max_height()}">
@@ -42,9 +42,7 @@ Vue.component('bs-autocomplete', {
 				if (new_value === true) {
 					document.body.addEventListener('click', this.click_outside_callback);
 					await this.scroll_to_active();
-					if (this.search_attrs.length > 0) {
-						this.$refs.search_input.focus();
-					}
+					this.$refs.search_input.focus();
 				}
 				if (new_value === false) {
 					document.body.removeEventListener('click', this.click_outside_callback);
@@ -73,17 +71,13 @@ Vue.component('bs-autocomplete', {
 				type: Array,
 				default: () => []
 			},
-			search_attrs: {
-				type: Array,
-				default: () => ['user_id', 'first_name', 'last_name']
-			},
 			item_text: {
 				type: [String, Function],
 				default: 'text',
 			},
 			return_attr: {
+				required: true,
 				type: String,
-				default: null,
 			},
 			return_obj: {
 				type: Boolean,
@@ -100,7 +94,7 @@ Vue.component('bs-autocomplete', {
 		computed: {
 			result_list() {
 				return this.items.filter(e => {
-					if (this.search_value === '' || this.search_attrs == []) {
+					if (this.search_value === '') {
 						return true;
 					}
 					return this.item_labels.get(e).toLowerCase().includes(this.search_value.toLowerCase());
