@@ -4,16 +4,18 @@ bs-autocomplete is a Bootstrap-styled select box that support searching and comp
 
 ## Usage
 
-Props         | Type               | Default Value | Description
-------------- | ------------------ | ------------- | -----------
-value         | [String, Object]   | ''            | Used by `v-model`
-placeholder   | String             | ''            | Placeholder of the search input.
-items         | Array              | []            | Item list.
-item_text     | [String, Function] | 'text'        | Attribute name or Callback rendered on the select box option filed.
-return_attr   | String             |               | Value of the selected `return_attr` will be returned when the option is selected.
-return_obj    | Boolean            | false         | If set to true, the return value will be object.
-max_height    | [String, Number]   | '300px'       | The max height of the dropdown list.
-required      | Boolean            | false         | If set to true, the select box will be required.
+Props         | Type               | Default Value    | Description
+------------- | ------------------ | ---------------- | -----------
+value         | [String, Object]   | ''               | Used by `v-model`.
+select_class  | String             | 'custom-select'  | Class used by select box.
+input_class   | String             | 'form-control'   | Class used by input box.
+placeholder   | String             | ''               | Placeholder of the search input.
+items         | Array              | []               | List for the listed items.
+item_text     | [String, Function] | 'text'           | Attribute name or Callback rendered on the select box option filed.
+return_attr   | String             |                  | Value of the selected `return_attr` will be returned when the option is selected.
+return_obj    | Boolean            | false            | If set to true, the return value will be object.
+max_height    | [String, Number]   | '300px'          | The max height of the dropdown list.
+required      | Boolean            | false            | If set to true, the select box will be required.
 
 ## Example
 
@@ -21,6 +23,7 @@ required      | Boolean            | false         | If set to true, the select 
 
 <bs-autocomplete
     v-model="value"
+    :select_class="select_class"
     :placeholder="placeholder"
     :items="items"
     :return_attr="attr"
@@ -33,6 +36,8 @@ required      | Boolean            | false         | If set to true, the select 
 new Vue({
     data: {
         value: null,
+        select_class: 'custom-select-class',
+        input_class: 'custom-input-class',
         placeholder: 'Search...',
         items: [{
             text: 'text',
