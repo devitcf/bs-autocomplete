@@ -4,7 +4,7 @@ Vue.component('bs-autocomplete', {
 		name: 'bs-autocomplete',
 		template: `
             <div style="position: relative" ref="outer_div">
-                <select :class="select_class" @click.stop.prevent="toggle_list" v-bind="$attrs" @keydown.38="press_up" @keydown.40="press_down" @keypress.enter.stop.prevent="press_enter">
+                <select :class="select_class" @click.prevent="toggle_list" v-bind="$attrs" @keydown.38="press_up" @keydown.40="press_down" @keypress.enter.stop.prevent="press_enter">
                 	<option style="display:none" v-if="selected_item" selected>
                 		<slot name="display_text" v-bind="{item:selected_item}">{{ get_item_text(selected_item) }}</slot>
                 	</option>
