@@ -26,7 +26,7 @@ required      | Boolean            | false            | If set to true, the sele
     :select_class="select_class"
     :placeholder="placeholder"
     :items="items"
-    :return_attr="attr"
+    :return_attr="return_attr"
     :item_text="item_text"
     required
 ></bs-autocomplete>
@@ -36,8 +36,8 @@ required      | Boolean            | false            | If set to true, the sele
 new Vue({
     data: {
         value: null,
-        select_class: 'custom-select-class',
-        input_class: 'custom-input-class',
+        select_class: 'custom-select',
+        input_class: 'form-control',
         placeholder: 'Search...',
         items: [{
             text: 'text',
