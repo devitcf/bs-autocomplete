@@ -9,5 +9,5 @@ Known issues
 
 Contributors
 =======
-<a href="https://github.com/devitcf"><img src="https://avatars.githubusercontent.com/u/58029528" style="border-radius: 50%; max-width:50px" alt="devitcf"></a></a>
-<a href="https://github.com/samuelleung123"><img src="https://avatars.githubusercontent.com/u/15344798" style="border-radius: 50%; max-width:50px" alt="samuelleung123"></a>
+1. <a href="https://github.com/devitcf">devitcf</a>
+1. <a href="https://github.com/samuelleung123">samuelleung123</a>
