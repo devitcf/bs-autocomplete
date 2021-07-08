@@ -55,8 +55,7 @@ new Vue({
 
 ## Known issues
 
-1. When clicked on the select box, there is an option pop-up on mobile devices Safari(iOS) and Firefox(Android)
-2. Does not work in Internet Explorer
+1. Does not work in Internet Explorer
 
 ## Contributors
 
