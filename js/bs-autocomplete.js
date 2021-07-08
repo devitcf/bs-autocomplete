@@ -172,7 +172,7 @@ Vue.component('bs-autocomplete', {
 				}
 			},
 			select(item) {
-				if (item.disable) {
+				if (!item || item.disable) {
 					return ;
 				}
 				this.selected_item = item;
