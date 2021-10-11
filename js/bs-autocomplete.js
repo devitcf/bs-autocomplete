@@ -67,7 +67,7 @@ Vue.component('bs-autocomplete', {
 		value: [String, Object],
 		select_class: {
 			type: String,
-			default: 'custom-select'
+			default: 'custom-select text-truncate'
 		},
 		input_class: {
 			type: String,
