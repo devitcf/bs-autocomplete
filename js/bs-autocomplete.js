@@ -9,7 +9,7 @@ Vue.component('bs-autocomplete', {
                     <slot name="display_text" v-bind="{item:selected_item}">{{ get_item_text(selected_item) }}</slot>
                 </template>
             </div>
-            <input type="hidden" :name="$attrs.name" :value="value">
+			<input style="opacity: 0; width: 0; height: 0; border: none; position: absolute; pointer-events: none" :name="$attrs.name" :required="$attrs.required" :value="value" >
             <div class="bs-autocomplete" v-if="show">
                 <div class="bs-autocomplete-items">
                     <div class="p-2">
